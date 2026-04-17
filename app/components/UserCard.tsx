@@ -9,7 +9,7 @@ interface User {
   role: string;
 }
 
-const users = [
+const users: User[] = [
   {
     id: 1,
     name: "Leanne Graham",
@@ -31,7 +31,6 @@ const users = [
 ];
 
 export default function UserCard() {
-  const [user, setUser] = useState<User[]>([]);
   const [search, setSearch] = useState<string>("");
 
   const filteredUsers = users.filter((user) =>
@@ -49,7 +48,9 @@ export default function UserCard() {
 
       {filteredUsers.map((user) => (
         <div key={user.id}>
-          {user.name} {user.email} {user.role}
+          <p> {user.name} </p>
+          <p>{user.email} </p>
+          <p>{user.role} </p>
         </div>
       ))}
     </div>
