@@ -2,7 +2,9 @@
 // import DarkMode from "./components/DarkMode";
 // import UserCard from "./components/UserCard";
 
-import UserData from "./components/UserData";
+import ShoppingCart from "./components/ShoppingCart";
+
+// import UserData from "./components/UserData";
 
 export default function Home() {
   return (
@@ -10,7 +12,8 @@ export default function Home() {
       {/* <UserList /> */}
       {/* <UserCard /> */}
       {/* <DarkMode /> */}
-      <UserData />
+      {/* <UserData /> */}
+      <ShoppingCart />
     </div>
   );
 }
