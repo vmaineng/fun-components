@@ -48,10 +48,18 @@ export default function ShoppingCart() {
   };
 
   const removeCart = (id: number) => {
+    const item = cart.find((item) => item.id === id);
+    if (!item) return;
+
+    setProducts(
+      products.map((p) =>
+        p.id === id ? { ...p, stock: p.stock + item.quantity } : p,
+      ),
+    );
     setCart(cart.filter((item) => item.id !== id));
   };
 
-  const total = cart.reduce((sum, item) => sum + item.price * item.quanity, 0);
+  const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
   return (
     <div>
       {products.map((product) => (
